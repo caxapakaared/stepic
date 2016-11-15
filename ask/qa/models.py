@@ -5,22 +5,18 @@ class Question(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     added_ad = models.DateTimeField(default=timezone.now)
-    rating = 0
+    rating = models.IntegerField()
     author = models.ForeignKey('auth.User')
-    likes
+    likes = models.ManyToManyField('auth.User')
 
-class Answer
+class Answer(models.Model):
     text = models.TextField()
     added_at = models.DateTimeField(default=timezone.now)
-    question 
+    question = models.ForeignKey(Question,on_delete=models.CASCADE,blank=True, null=True))
     author = models.ForeignKey('auth.User')
-    author
 
-
-
-
-
-
-
-
-# Create your models here.
+class QuestionManager:
+    def new:
+        pass
+    def popular:
+        pass
