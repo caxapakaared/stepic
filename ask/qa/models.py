@@ -1,14 +1,14 @@
 from django.db import models
 from django.utils import timezone
-
+from django.contrib.auth.models import User
 class QuestionManager(models.Manager):
     def new():
         pass
     def popular():
         pass
 
-class User(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE,blank=True, null=True)
+#class User(models.Model):
+#    user = models.ForeignKey('auth.User', on_delete=models.CASCADE,blank=True, null=True)
 
 class Question(models.Model):
     objects = QuestionManager()
